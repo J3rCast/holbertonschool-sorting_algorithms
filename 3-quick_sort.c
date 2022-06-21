@@ -3,8 +3,11 @@
  * partition - partition the array
  *
  * @array: array to sort
- * @low: lowest index 
+ * @low: lowest index
  * @high: higher index
+ * @size: size of the array
+ *
+ * Return: index where partition starts
  */
 int partition(int *array, int low, int high, size_t size)
 {
@@ -36,10 +39,11 @@ int partition(int *array, int low, int high, size_t size)
 }
 /**
  * qs - sort an array using quick sort
- * 
+ *
  * @array: array to sort
- * @low: lowest index 
+ * @low: lowest index
  * @high: higher index
+ * @size: size of the array
  */
 void qs(int *array, int low, int high, size_t size)
 {
@@ -49,7 +53,7 @@ void qs(int *array, int low, int high, size_t size)
 		return;
 
 	pivot = partition(array, low, high, size);
-	qs(array, low, pivot -1, size);
+	qs(array, low, pivot - 1, size);
 	qs(array, pivot + 1, high, size);
 }
 /**
